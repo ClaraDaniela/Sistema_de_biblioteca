@@ -1,97 +1,138 @@
-#
+# 📚 Gestor de Biblioteca de Hogwarts
 
-# 🛍️ Proyecto sistema de biblioteca con React + Vite + React Router
+Sistema de gestión de biblioteca desarrollado con Java Spring Boot y React, ambientado en el universo de Harry Potter.
 
-Este proyecto es un sistema de gestión para una biblioteca online creado con **React**, **Vite** y **React Router DOM**.
-Incluye navegación, login simulado, CRUD de libros, autores, lectores, prestamos, generacion automatica de multas, lista de libros prohibidos para estudiantes no avanzados y estilos con CSS modular.
+## 🛠️ Tecnologías
 
----
+### Backend
 
-## 🚀 Requisitos
+- Java 17+
+- Spring Boot 3.x
+- MySQL 8.0+
+- Maven
 
-- Node.js >= 17
-- npm >= 8 o yarn
+### Frontend
 
----
+- React 18+
+- React Router DOM
+- CSS3
 
-## 📦 Instalación y Configuración Inicial
+## 📋 Requisitos Previos
 
-1. Crear proyecto con Vite:
+- JDK 17 o superior
+- MySQL 8.0 o superior
+- Node.js 16+ y npm
+- Maven 3.6+
 
-```bash
-npm create vite@latest biblioteca-react
+## ⚙️ Configuración
+
+### 1. Base de Datos
+
+Crea la base de datos en MySQL:
+
+```sql
+CREATE DATABASE biblioteca_hogwarts;
 ```
 
-2. Seleccionar las opciones:
+### 2. Backend (Spring Boot)
 
-   - **Framework** → `React`
-   - **Variant** → `JavaScript`
+1. Clona el repositorio
+2. Configura `application.properties`:
 
-3. Entrar en la carpeta:
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/biblioteca_hogwarts
+spring.datasource.username=tu_usuario
+spring.datasource.password=tu_contraseña
 
-```bash
-cd biblioteca-react
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
 ```
 
-4. Instalar dependencias:
+3. Ejecuta el proyecto:
 
 ```bash
+cd backend
+mvn clean install
+mvn spring-boot:run
+```
+
+El servidor estará disponible en `http://localhost:8080`
+
+### 3. Frontend (React)
+
+1. Instala las dependencias:
+
+```bash
+cd frontend
 npm install
 ```
 
-5. Instalar React Router DOM:
+2. Inicia el servidor de desarrollo:
 
 ```bash
-npm install react-router-dom
+npm start
 ```
 
-6. Instalar lucile-react:
+La aplicación estará disponible en `http://localhost:3000`
 
-```bash
-npm install lucide-react
+## 🚀 Uso
+
+1. Inicia MySQL
+2. Ejecuta el backend (Puerto 8080)
+3. Ejecuta el frontend (Puerto 5173)
+4. Accede a `http://localhost:5173/login`
+
+### Credenciales
+
+- El administrador debe crear las credenciales, sea que este tenga las suyas propias o la tenga que crear en la base de datos.
+
+## 📁 Estructura del Proyecto
+
+```
+proyecto/
+├── backend/
+│   ├── src/main/java/
+│   │   └── com/bibliotecadehogwarts/
+│   │       ├── controller/
+│   │       ├── service/
+│   │       ├── repository/
+│   │       ├── model/
+│   │       └── dto/
+│   └── application.properties
+└── frontend/
+    ├── src/
+    │   ├── components/
+    │   └── styles/
+    │   └── services/
+    └── package.json
 ```
 
-7. Instalar axios para solicitudes HTTP:
+## 🎯 Funcionalidades
 
-```bash
-npm install axios
-```
+- ✅ Gestión de libros
+- ✅ Gestión de lectores por casas de Hogwarts
+- ✅ Sistema de préstamos
+- ✅ Control de multas
+- ✅ Dashboard con estadísticas
+- ✅ Identificación de casa más lectora
 
-8. Iniciar servidor de desarrollo:
+## 🐛 Solución de Problemas
 
-```bash
-npm run dev
-```
+### Error de conexión a MySQL
 
-La app se abrirá en 👉 `http://localhost:5173`
+- Verifica que MySQL esté corriendo
+- Confirma las credenciales en `application.properties`
 
----
+### CORS errors
 
-## ⚙️ Configuración de React Router
+- Asegúrate de que el backend permita peticiones desde `http://localhost:3000`
 
-En `main.jsx`:
+### Puerto ocupado
 
-```jsx
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
-import App from "./App.jsx";
+- Backend: Cambia el puerto en `application.properties`: `server.port=8081`
+- Frontend: Usa `PORT=3001 npm start`
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
-);
-```
+## 📝 Notas
 
-En `App.jsx` se definen las rutas con `<Routes>` y `<Route>`.
-
----
-
-## 🛠️ Comandos
-
-- `npm run dev` → Inicia servidor de desarrollo
-- `npm run build` → Genera versión optimizada
-- `npm run preview` → Previsualiza build
-
----
+- Las tablas se crean automáticamente con `ddl-auto=update`
+- Los datos de ejemplo deben cargarse manualmente o mediante scripts SQL
