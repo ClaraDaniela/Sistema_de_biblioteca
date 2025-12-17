@@ -1,0 +1,24 @@
+/* =========================
+   flechita inicio dash
+========================= */
+.volver-inicio {
+  display: flex;
+  justify-content: flex-start;;
+  margin-bottom: 10px;
+}
+
+.volver-inicio a {
+  text-decoration: none;
+  font-size: 1.4rem;
+  padding: 6px 10px;
+  border-radius: 50%;
+  border: 1px solid #d4af37;
+  color: #d4af37;
+  background: rgba(0, 0, 0, 0.4);
+  transition: 0.2s;
+}
+
+.volver-inicio a:hover {
+  background-color: rgba(212, 175, 55, 0.2);
+  transform: translateY(-2px);
+}

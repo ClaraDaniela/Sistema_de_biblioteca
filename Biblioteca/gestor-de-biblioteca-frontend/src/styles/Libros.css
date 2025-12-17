@@ -1,0 +1,73 @@
+/* =======================
+   CONTENEDOR DE LIBROS
+======================= */
+.contenedor-tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+/* =======================
+   TARJETA DE LIBRO
+======================= */
+.tarjeta {
+  background: linear-gradient(#f5f1e6, #e6dcc3);
+  border-radius: 16px;
+  padding: 15px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tarjeta:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+}
+
+/* =======================
+   IMAGEN DEL LIBRO
+======================= */
+.tarjeta-imagen {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 4px solid #2c2c2c;
+  margin-bottom: 10px;
+}
+
+/* =======================
+   TEXTO
+======================= */
+.tarjeta h2 {
+  font-size: 1.1rem;
+  margin: 8px 0;
+  color: #2c2c2c;
+}
+
+.tarjeta p {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+/* =======================
+   BOTÓN
+======================= */
+.tarjeta button {
+  margin-top: 12px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #7f0909, #ecb939);
+  color: #1c1c1c;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.tarjeta button:hover {
+  background: linear-gradient(90deg, #315be6, #7f0909);
+}
+
+

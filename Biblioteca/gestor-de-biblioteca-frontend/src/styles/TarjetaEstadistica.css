@@ -1,0 +1,41 @@
+/* =========================
+   TARJETAS DE ESTADÍSTICAS
+========================= */
+
+.tarjeta-stat {
+  background: linear-gradient(180deg, #3d2b1f, #2a1b0f);
+  border: 1px solid rgba(212, 175, 55, 0.6);
+}
+
+.tarjeta-stat h2 {
+  color: #f0d58c;
+  font-size: 1.2rem;
+}
+
+.tarjeta-stat .stat-valor {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #d4af37;
+  margin-top: 10px;
+  text-shadow: 0 0 8px rgba(212,175,55,0.4);
+}
+.acciones-tarjeta {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.acciones-tarjeta button {
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid #d4af37;
+  background: transparent;
+  color: #d4af37;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.acciones-tarjeta button:hover {
+  background-color: rgba(212, 175, 55, 0.2);
+}

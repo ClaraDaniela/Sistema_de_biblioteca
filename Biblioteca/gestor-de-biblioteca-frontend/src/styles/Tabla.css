@@ -1,0 +1,34 @@
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  background: #2b1d13;
+  color: #f5deb3;
+  font-family: Arial, sans-serif;
+}
+
+/* Encabezados */
+.tabla th {
+  padding: 10px;
+  border-bottom: 1px solid #bfa76a;
+  background: #3d2b1f;
+  text-align: left;
+  vertical-align: middle;
+  font-weight: bold;
+}
+
+/* Celdas */
+.tabla td {
+  padding: 10px;
+  border-bottom: 1px solid #bfa76a;
+  vertical-align: middle;
+  text-align: left;
+}
+
+/* Botones dentro de la tabla */
+.tabla button {
+  margin-right: 6px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
